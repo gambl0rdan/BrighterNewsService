@@ -11,7 +11,7 @@ from project import create_app
 
 # import project.utils.data_config as data_config
 
-app = create_app('flask.cfg')
+app = create_app('flask_prod.cfg')
 
 
 @app.route("/")
@@ -60,8 +60,8 @@ def get_sentiments():
 # server = WSGIServer(('0.0.0.0', 5001), app)
 # app.debug = True
 # app.run(host = '192.168.1.67',port=5001)
-app.run(host='0.0.0.0', port=5001)
+# app.run(host='0.0.0.0', port=5001)
 
-# server = WSGIServer(('127.0.0.1', 5001), app)
-# server.serve_forever()
+server = WSGIServer(('0.0.0.0', 5001), app)
+server.serve_forever()
 # android:style/TextAppearance.Material.
