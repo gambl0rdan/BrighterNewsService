@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath brighternews app
+web: gunicorn --pythonpath brighternews main
