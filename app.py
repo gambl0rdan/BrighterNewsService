@@ -37,7 +37,7 @@ def get_sentiment():
         if headline:
             compoundScore = app.engine.get_scores_headline(headline)
             return jsonify({'result' : compoundScore })
-        return jsonify({'result': 'Empty'})
+        return jsonify({'result': '0.'})
     except Exception as e:
         return (str(e))
 
@@ -50,7 +50,7 @@ def get_sentiments():
         if headlines:
             compoundScores = [app.engine.get_scores_headline(headline) for headline in headlines.split('|')]
             return jsonify({'result' : compoundScores })
-        return jsonify({'result': 'Empty'})
+        return jsonify({'result': '0.'})
     except Exception as e:
         return (str(e))
 
