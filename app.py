@@ -75,7 +75,9 @@ def get_sentinment_article():
 @app.route('/get-bitcoin-latest', methods=['GET'])
 def get_bitcoin_latest():
     try:
-        url = "https://newsapi.org/v2/everything?q=bitcoin&from=2019-11-03&sortBy=publishedAt&apiKey=338d2068147b4dff8d3d030fcb59e4af"
+        import datetime
+        date = datetime.datetime.now().strftime("%Y-%M-%d")
+        url = f"https://newsapi.org/v2/everything?q=bitcoin&from={date}&sortBy=publishedAt&apiKey=338d2068147b4dff8d3d030fcb59e4af"
         if url:
 
             everythingResults = app.service.get_article_page(url)
