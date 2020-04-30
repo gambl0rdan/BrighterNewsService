@@ -1,6 +1,7 @@
 # project/__init__.py
 from flask import Flask
 from project.service.sentiment_engine import SentimentEngine
+from project.service.news_api_service import NewsApiService
 
 def create_app(config_filename=None):
     print
@@ -13,3 +14,4 @@ def create_app(config_filename=None):
 
 def initialize_extensions(app):
     app.engine = SentimentEngine()
+    app.service = NewsApiService()
